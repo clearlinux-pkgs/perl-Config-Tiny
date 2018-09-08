@@ -1,5 +1,5 @@
 PKG_NAME := perl-Config-Tiny
-URL = https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE/Config-Tiny-2.23.tgz
+URL = 
 ARCHIVES = 
 
 include ../common/Makefile.common
