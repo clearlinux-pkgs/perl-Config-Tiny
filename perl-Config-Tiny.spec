@@ -4,10 +4,10 @@
 #
 Name     : perl-Config-Tiny
 Version  : 2.23
-Release  : 9
+Release  : 10
 URL      : https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE/Config-Tiny-2.23.tgz
 Source0  : https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE/Config-Tiny-2.23.tgz
-Summary  : 'Read/Write .ini style files with as little code as possible'
+Summary  : Read/Write .ini style files with as little code as possible
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-2.0
 Requires: perl-Config-Tiny-license = %{version}-%{release}
@@ -24,6 +24,7 @@ ftp://ftp.info-zip.org/pub/infozip/
 Summary: dev components for the perl-Config-Tiny package.
 Group: Development
 Provides: perl-Config-Tiny-devel = %{version}-%{release}
+Requires: perl-Config-Tiny = %{version}-%{release}
 
 %description dev
 dev components for the perl-Config-Tiny package.
