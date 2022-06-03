@@ -4,7 +4,7 @@
 #
 Name     : perl-Config-Tiny
 Version  : 2.28
-Release  : 26
+Release  : 27
 URL      : https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE/Config-Tiny-2.28.tgz
 Source0  : https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE/Config-Tiny-2.28.tgz
 Summary  : 'Read/Write .ini style files with as little code as possible'
@@ -100,4 +100,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/Config/Tiny.pm
+/usr/lib/perl5/*
