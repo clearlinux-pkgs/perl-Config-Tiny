@@ -4,10 +4,10 @@
 # Using build pattern: cpan
 #
 Name     : perl-Config-Tiny
-Version  : 2.29
-Release  : 30
-URL      : https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE/Config-Tiny-2.29.tgz
-Source0  : https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE/Config-Tiny-2.29.tgz
+Version  : 2.30
+Release  : 31
+URL      : https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE/Config-Tiny-2.30.tgz
+Source0  : https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE/Config-Tiny-2.30.tgz
 Summary  : 'Read/Write .ini style files with as little code as possible'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0 GPL-2.0
@@ -53,8 +53,11 @@ perl components for the perl-Config-Tiny package.
 
 
 %prep
-%setup -q -n Config-Tiny-2.29
-cd %{_builddir}/Config-Tiny-2.29
+%setup -q -n Config-Tiny-2.30
+cd %{_builddir}/Config-Tiny-2.30
+pushd ..
+cp -a Config-Tiny-2.30 buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -62,7 +65,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
 if test -f Makefile.PL; then
-%{__perl} Makefile.PL
+%{__perl} -I. Makefile.PL
 make  %{?_smp_mflags}
 else
 %{__perl} Build.PL
@@ -89,6 +92,7 @@ find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
 find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %{_fixperms} %{buildroot}/*
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
