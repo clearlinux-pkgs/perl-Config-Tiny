@@ -5,7 +5,7 @@
 #
 Name     : perl-Config-Tiny
 Version  : 2.30
-Release  : 34
+Release  : 35
 URL      : https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE/Config-Tiny-2.30.tgz
 Source0  : https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE/Config-Tiny-2.30.tgz
 Summary  : 'Read/Write .ini style files with as little code as possible'
